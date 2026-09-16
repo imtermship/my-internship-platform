@@ -1,23 +1,30 @@
-# Backend Setup Instructions
+# Backend
 
-## Install Dependencies
+Node.js + Express API server for MY Internship Platform
+
+## Setup
+
 ```bash
-cd backend
 npm install
-```
-
-## Environment Variables
-Create `.env` file:
-```
-DATABASE_URL=postgresql://user:password@localhost:5432/my_internship
-JWT_SECRET=your-secret-key-here
-NODE_ENV=development
-PORT=5000
-```
-
-## Run Development Server
-```bash
+cp .env.example .env
 npm run dev
 ```
 
-Server runs on `http://localhost:5000`
+## Folder Structure
+
+```
+src/
+├── server.js              # Express app entry
+├── config/               # Configuration
+├── database/             # Database connections & migrations
+├── middleware/           # Auth, validation, error handling
+├── routes/               # API routes
+├── controllers/          # Business logic
+├── models/               # Database queries
+├── services/             # Business services (PDF, notifications)
+└── utils/                # Helper functions
+```
+
+## API Endpoints
+
+See `docs/API.md` for complete endpoint documentation
