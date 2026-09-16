@@ -1,13 +1,10 @@
 const express = require('express');
 const router = express.Router();
+const authMiddleware = require('../middleware/auth');
+const { register, login, verifyToken } = require('../controllers/authController');
 
-// Mock routes - will be implemented with controllers
-router.post('/register', (req, res) => {
-  res.json({ message: 'Register endpoint' });
-});
-
-router.post('/login', (req, res) => {
-  res.json({ message: 'Login endpoint' });
-});
+router.post('/register', register);
+router.post('/login', login);
+router.get('/verify', authMiddleware, verifyToken);
 
 module.exports = router;

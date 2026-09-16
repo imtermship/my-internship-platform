@@ -1,17 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const authMiddleware = require('../middleware/auth');
+const { getAllInternships, getInternshipById, createInternship, updateInternship } = require('../controllers/internshipController');
 
-router.get('/', (req, res) => {
-  res.json({ message: 'Get all internships' });
-});
-
-router.get('/:id', (req, res) => {
-  res.json({ message: 'Get internship details' });
-});
-
-router.post('/', authMiddleware, (req, res) => {
-  res.json({ message: 'Create new internship' });
-});
+router.get('/', getAllInternships);
+router.get('/:id', getInternshipById);
+router.post('/', authMiddleware, createInternship);
+router.put('/:id', authMiddleware, updateInternship);
 
 module.exports = router;
