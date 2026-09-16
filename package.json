@@ -1,0 +1,22 @@
+{
+  "name": "my-internship-platform",
+  "version": "1.0.0",
+  "description": "MY - Internship Platform connecting students, employers, and institutions",
+  "scripts": {
+    "start": "npm run start:all",
+    "start:all": "npm install --prefix backend && npm install --prefix frontend && concurrently \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\"",
+    "start:backend": "npm run dev --prefix backend",
+    "start:frontend": "npm run dev --prefix frontend",
+    "dev": "concurrently \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\""
+  },
+  "keywords": [
+    "internship",
+    "platform",
+    "students",
+    "employers",
+    "verification",
+    "placement"
+  ],
+  "author": "MY Team",
+  "license": "MIT"
+}
